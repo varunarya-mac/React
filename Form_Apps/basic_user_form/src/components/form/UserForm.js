@@ -25,7 +25,7 @@ const Form = (props) => {
     function submitInfo(event) {
         event.preventDefault();
 
-        if(name.length < 1 || age.length < 1)
+        if(name.trim().length < 1 || age.trim().length < 1)
         {
             updatePopupState(
                 {
@@ -49,6 +49,10 @@ const Form = (props) => {
                 userName: name,
                 userAge: age
             });
+
+            addAge('');
+        addName('');
+            
         }
     }
 
@@ -59,18 +63,19 @@ const Form = (props) => {
                 msg: ''
             
         });
+
     }
 
     return (
-        <Card>
+        <Card className={styles.input}>
         <form onSubmit={submitInfo}>
-            <div className={styles.form_control}>
-                <label>User Name </label>
-                <input type="text" maxLength='50' onChange={updateName}  />
+            <div>
+                <label htmlFor='username' >User Name </label>
+                <input id='username' type="text" maxLength='50' value={name}  onChange={updateName}  />
             </div>
             <div>
-                <label>Age </label>
-                <input type="number" onChange={updateAge}/>
+                <label htmlFor='userage'>Age </label>
+                <input id='userage' type="number" value={age} onChange={updateAge}/>
             </div>
             <Button type="submit" title="Add User Info" />
             

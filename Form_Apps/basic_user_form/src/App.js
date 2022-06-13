@@ -1,20 +1,21 @@
-import './App.css';
-import UserForm from './components/form/UserForm'
-import UserList from './components/users/UserList'
-import {useState} from 'react'
+import "./App.css";
+import UserForm from "./components/form/UserForm";
+import UserList from "./components/users/UserList";
+import { useState } from "react";
 
 function App() {
-
-  const [users, addNewUser] = useState([])
+  const [users, addNewUser] = useState([]);
 
   function updateUserList(userDetails) {
-    addNewUser([userDetails, ...users]);
+    addNewUser((prevState) => {
+      return [...prevState, userDetails];
+    });
   }
 
   return (
     <div className="App">
-        <UserForm addUser={updateUserList}></UserForm>
-        <UserList userList={users}></UserList>
+      <UserForm addUser={updateUserList}></UserForm>
+      <UserList userList={users}></UserList>
     </div>
   );
 }
