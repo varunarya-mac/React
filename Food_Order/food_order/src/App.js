@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import styles from './App.module.css';
+import {Fragment, useState} from 'react'
+import Header from './component/header/Header'
+import Meals from './component/meal-list/Meals'
+import Cart from './component/cart-popup/Cart' 
 function App() {
+
+  const [showModal, setShowModalState] = useState(false);
+
+  function showModal() {
+    setShowModalState(true);
+  }
+
+  function hideModal() {
+    setShowModalState(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {showModal && <Cart></Cart>}
+        <Header></Header>
+        <main>
+          <Meals></Meals>
+        </main>
+    </Fragment>
   );
 }
 
