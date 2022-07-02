@@ -1,11 +1,12 @@
 import styles from './App.module.css';
-import {Fragment, useState} from 'react'
+import {useState} from 'react'
 import Header from './component/header/Header'
 import Meals from './component/meal-list/Meals'
 import Cart from './component/cart-popup/Cart' 
+import CartProvider from './store/Cart-Provider';
 function App() {
 
-  const [showModal, setShowModalState] = useState(false);
+  const [showModalUI, setShowModalState] = useState(false);
 
   function showModal() {
     setShowModalState(true);
@@ -16,13 +17,13 @@ function App() {
   }
 
   return (
-    <Fragment>
-      {showModal && <Cart></Cart>}
-        <Header></Header>
+    <CartProvider>
+      {showModalUI && <Cart onClose={hideModal}> </Cart>}
+        <Header showModal={showModal}></Header>
         <main>
           <Meals></Meals>
         </main>
-    </Fragment>
+    </CartProvider>
   );
 }
 
