@@ -6,11 +6,10 @@ const MealItem = (props) => {
   const cartCtx = useContext(CartContext);
 
   function updateCart(itemAmount) {
-    console.log('----------------',itemAmount, props.item);
     cartCtx.addItem({
-      id: props.id,
-      name: props.name,
-      price: props.price,
+      id: props.item.id,
+      name: props.item.name,
+      price: props.item.price,
       amount: itemAmount
     })
 
