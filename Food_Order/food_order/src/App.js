@@ -26,5 +26,5 @@ function App() {
     </CartProvider>
   );
 }
-
+// https://react-food-order-157be-default-rtdb.europe-west1.firebasedatabase.app/order.json
 export default App;

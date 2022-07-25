@@ -2,12 +2,28 @@ import styles from "./Meals.module.css";
 import Card from "../shared/Card";
 import MealItem from "./Meal-Item";
 import Data from "../../assets/data.json";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const Meals = (props) => {
-  const list = Data.map((obj) => {
+  const [data, setData] = useState([]);
+
+  const list = data.map((obj) => {
     return <MealItem key={obj.id} item={obj} />;
   });
+
+  useEffect(()=> {
+
+    // GET request using fetch "http://127.0.0.1:8887/data.json"
+    // its chrome web server for testing 
+    fetch('http://127.0.0.1:8887/data.json')
+    .then((response) => response.json())
+    .then((actualData) => {
+      console.log(actualData)
+      setData(actualData);
+  });
+
+}, []);
+  
 
   return (
     <Fragment>
