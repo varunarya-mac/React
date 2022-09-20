@@ -1,9 +1,19 @@
-import { createSlice} from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 
 const initialState = {
     totalCount: 0,
     items: []
 };
+
+export const updateListOnServer = createAsyncThunk('cartItem/updateListOnServer' , async (item) => {
+    const requestOptions ={
+        method: 'POST'
+    };
+    const result = await fetch('http://localhost:8080/items', requestOptions);
+    return result.json();
+});
+
+
 const cartSlice = createSlice({
     name: 'cartItem',
     initialState,
@@ -26,9 +36,7 @@ const cartSlice = createSlice({
         },
 
         removeItem(state, action) {
-            console.log('----------',action.payload);
             const itemFound = state.items.findIndex((item) => item.itemId === action.payload);
-            console.log('itemFound----------',itemFound);
 
             if(state.items[itemFound].itemQuantity === 1) {
                 state.items.splice(itemFound, 1);
@@ -39,6 +47,14 @@ const cartSlice = createSlice({
             state.totalCount--;
             
         } 
+    },
+    extraReducers: {
+        [updateListOnServer.fulfilled]: (state, action) => {
+            console.log('-----success Asnyc Action-----',action.payload);
+          },
+        [updateListOnServer.rejected]: (state, action) => {
+            console.log('------rejection Async Action----',action.payload);
+          }
     }
 
     });

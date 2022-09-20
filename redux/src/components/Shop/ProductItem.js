@@ -1,8 +1,7 @@
 import Card from '../UI/Card';
 import classes from './ProductItem.module.css';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../redux_store/action/cartItemSlice';
-
+import { addItem, updateListOnServer } from '../../redux_store/action/cartItemSlice';
 
 
 const ProductItem = (props) => {
@@ -11,6 +10,7 @@ const ProductItem = (props) => {
 
   const addCart = (event) => {
     event.preventDefault();
+      dispatch(updateListOnServer(props));
      dispatch(addItem(props));
   }
 

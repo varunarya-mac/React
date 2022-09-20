@@ -3,7 +3,9 @@ import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import { Provider } from "react-redux";
 import store from "./redux_store/store"
+
 function App() {
+  
   return (
     <Provider store={store}>
       <Layout>

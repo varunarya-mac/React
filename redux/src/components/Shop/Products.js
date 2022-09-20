@@ -7,7 +7,7 @@ const Products = (props) => {
 
   const fetchList = async () => {
   try {
-    const response = await fetch('http://localhost:8080/getItems', {mode:'cors'});
+    const response = await fetch('http://localhost:8080/items', {mode:'cors'});
     const data = await response.json();
     getItemsList(data);
   }
