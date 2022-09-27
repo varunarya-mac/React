@@ -1,1 +1,1 @@
-This is sample app with React routing `version-5` lib.
+This is sample app with React routing `version-5` library.
