@@ -1,0 +1,1 @@
+This is sample app with React routing `version-6` lib.
