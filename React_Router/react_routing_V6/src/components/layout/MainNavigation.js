@@ -8,18 +8,18 @@ const MainNavigation = () => {
       <nav className={style.nav}>
         <ul>
           <li>
-            <NavLink to="/quotes" activeClassName={style.active}>
+            <NavLink to="/quotes"  className={(navData)=> navData.isActive ? style.active : '' }>
               {" All Quotes"}
             </NavLink>
           </li>
           <li>
-            <NavLink to="/new-quote" activeClassName={style.active}>
+            <NavLink to="/new-quote" className={(navData)=> navData.isActive ? style.active : '' }>
               {"Add New quote "}
             </NavLink>
           </li>
         </ul>
       </nav>
-    </header>
+    </header> 
   );
 };
 
