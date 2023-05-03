@@ -1,0 +1,43 @@
+.container {
+    background-color: pink;
+    width: 50%;
+    margin : 50px;
+    padding: 5px;
+}
+
+.accordion-heading {
+    position: relative;
+    text-transform: uppercase;
+}
+
+.accordion-arrowup.accordion-heading::after {
+    content: '\25B2';
+    letter-spacing: 1px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    }
+
+.accordion-arrowdown.accordion-heading::after {
+    content: '\25BC';
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+.accordion-content {
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .5s ease-in-out;
+}
+
+.accordion-content > div {
+    overflow: hidden;
+}
+
+.accordion-content-expended {
+    grid-template-rows: 1fr;
+}
+
+
