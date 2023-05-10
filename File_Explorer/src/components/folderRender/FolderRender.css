@@ -1,0 +1,22 @@
+.render {
+    background-color: grey;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
+.folder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.folder > button:nth-of-type(1){
+    margin-left:50px;
+}
+
+.file {
+  
+
+}

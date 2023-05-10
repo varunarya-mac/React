@@ -1,0 +1,56 @@
+[{
+  "id": "1",
+  "isFolder": true,
+  "name": "root",
+  "children": [
+    {
+      "id": "2",
+      "isFolder": false,
+      "name": "src",
+      "children": null
+    },
+    {
+      "id": "3",
+      "isFolder": true,
+      "name": "package",
+      "children": [{
+        "id": "4",
+        "isFolder": true,
+        "name": "inner package",
+        "children": [
+          {
+            "id": "5",
+            "isFolder": false,
+            "name": "src2",
+            "children": null
+          },
+          {
+            "id": "6",
+            "isFolder": true,
+            "name": "package2",
+            "children": null
+          },
+          {
+            "id": "10",
+            "isFolder": false,
+            "name": "readme2",
+            "children": null
+          }
+        ]
+      }]
+    },
+    {
+      "id": "13",
+      "isFolder": true,
+      "name": "git",
+      "children": [
+        {
+          "id": "9",
+          "isFolder": false,
+          "name": "git   file",
+          "children": null
+        }
+        ]
+    }
+  ]
+}]
