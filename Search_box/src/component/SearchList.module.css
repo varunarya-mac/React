@@ -1,0 +1,21 @@
+.list {
+    background-color: lightgrey;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    max-height: 100px;
+    overflow: scroll;
+
+}
+
+.listitem {
+    margin: 3px;
+    transition: scale .5s linear;
+}
+
+.listitem:hover {
+    scale: 1.02;
+    cursor: pointer; 
+}

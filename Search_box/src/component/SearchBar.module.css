@@ -1,0 +1,20 @@
+.inputwrapper {
+    width: 200px;
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+    padding:0 5px;
+}
+
+.input {
+    width: 90%;
+    height: 85%;
+    border: none;
+}
+
+.input:focus {
+    outline: none;
+}
